@@ -1,0 +1,24 @@
+kind = "mobile"
+previewPath = "/focusapp-offline/"
+title = "FocusApp Offline"
+description = "A local-first focus timer for work and study sessions, with saved history, customizable focus settings, and insights that work without an internet connection."
+version = "1.0.0"
+id = "artifacts/focusapp-offline"
+router = "expo-domain"
+
+[[services]]
+name = "expo"
+ensurePreviewReachable = "/status"
+paths = [ "/focusapp-offline/" ]
+localPort = 25446
+
+[services.development]
+run = "pnpm --filter @workspace/focusapp-offline run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/focusapp-offline", "run", "build" ]
+run = [ "pnpm", "--filter", "@workspace/focusapp-offline", "run", "serve" ]
+
+[services.env]
+PORT = "25446"
+BASE_PATH = "/focusapp-offline/"

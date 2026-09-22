@@ -1,0 +1,1 @@
+- [Uploaded mobile snapshots](uploaded-mobile-snapshots.md) — attached React Native exports may omit referenced source modules and rename entry files; verify the actual project tree before repairing.
